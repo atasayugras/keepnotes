@@ -1,0 +1,78 @@
+.card-header {
+  display: flex;
+  justify-content: space-between; /* Pushes the icon container to the right */
+  align-items: first baseline; /* Vertically aligns title and icons */
+  gap: 8px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  background-color: #2e2e2e;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 -2px 4px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  transition: background-color 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card:hover {
+  background-color: #3e3e3e;
+}
+
+.card-title {
+  font-size: 17px;
+  font-weight: 900;
+  color: #888888;
+  margin: 0;
+  overflow-wrap: break-word; /* Break long words to prevent overflow */
+  min-width: 0; /* Prevents the title from pushing the icons out */
+}
+
+.card-message {
+  font-size: 16px;
+  color: #d0d0d0;
+  margin: 0;
+  overflow-wrap: break-word; /* Break long words to prevent overflow */
+}
+
+.card-btn-container {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.icon-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Show pointer cursor on hover */
+  background-color: transparent;
+  height: 24px;
+}
+
+.icon-btn:hover {
+  box-shadow: inset 1px 1px 2px #141414; /* Change on hover */
+  fill: #fff; /* Change on active */
+  color: #fff;
+}
+
+.icon:active {
+  fill: #d0d0d0; /* Change on active */
+  color: #d0d0d0;
+  transition: fill 0.1s ease;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  fill: #888;
+  color: #888;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Header partial -->
+  <%- include("../partials/header.ejs") %>
+  <main>
+    <body>
+      <!-- Title -->
+      <h2 class="container">Dashboard</h2>
+      <!-- Card generation -->
+      <div class="container">
+        <!-- Loops through each post and generates a card for it. -->
+        <% posts.forEach(post => { %>
+        <!-- Represents a card for each post with a data attribute for the post ID. -->
+        <div class="card" data-id="<%= post.id %>">
+          <div class="card-header">
+            <h3 class="card-title"><%= post.title.toUpperCase(); %></h3>
+            <div class="card-btn-container">
+              <!-- Edit button with data attribute for the post ID. -->
+              <button class="icon-btn edit-btn" data-id="<%= post.id %>">
+                <svg class="icon">
+                  <use xlink:href="/assets/icons/sprite.svg#icon-edit"></use>
+                </svg>
+              </button>
+              <!-- Delete button with data attribute for the post ID. -->
+              <button class="icon-btn delete-btn" data-id="<%= post.id %>">
+                <svg class="icon">
+                  <use xlink:href="/assets/icons/sprite.svg#icon-delete"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <p class="card-message"><%= post.message %></p>
+        </div>
+        <%}); %>
+      </div>
+
+      <!-- Footer partial -->
+      <div class="footer"><%- include("../partials/footer.ejs") %></div>
+
+      <!-- Add jQuery CDN (full version) -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      // dashboard.ejs
+      <script>
+        $(document).ready(function () {
+          // Handle edit button click
+          $(".edit-btn").on("click", function () {
+            const postId = $(this).data("id");
+            window.location.href = `/posts/edit/${postId}`;
+          });
+
+          // Handle delete button click
+          $(".delete-btn").on("click", function () {
+            const postId = $(this).data("id");
+
+            $.ajax({
+              url: `/posts/delete/${postId}`,
+              type: "DELETE",
+              success: function () {
+                window.location.href = "/";
+              },
+              error: function (err) {
+                alert("Failed to delete the post");
+              },
+            });
+          });
+        });
+      </script>
+    </body>
+  </main>
+</html>

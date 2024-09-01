@@ -1,0 +1,29 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #1e1e1e;
+}
+
+h2.container {
+  display: block;
+  font-size: 2rem;
+  text-align: left;
+  color: #fff;
+  margin-top: 40px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto; /* Center the container itself */
+  padding: 20px;
+  gap: 20px;
+  box-sizing: border-box;
+}

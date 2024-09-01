@@ -1,0 +1,27 @@
+<div class="container">
+  <form action="<%= formAction %>" method="POST" id="<%= formId %>">
+    <div>
+      <input
+        type="text"
+        id="title"
+        class="form-input"
+        name="title"
+        placeholder="Enter your title"
+        value="<%= titleValue %>"
+        required
+      />
+    </div>
+    <div>
+      <textarea
+        id="message"
+        class="form-textarea"
+        name="message"
+        placeholder="Enter your message"
+        required
+      >
+<%= messageValue %></textarea
+      >
+    </div>
+    <button type="submit" class="form-button"><%= buttonText %></button>
+  </form>
+</div>

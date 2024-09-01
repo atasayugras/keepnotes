@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/header.ejs") %>
+  <main>
+    <h2 class="container">Create new note</h2>
+    <div>
+      <!-- Includes a form partial with specific parameters for action URL, form ID, and button text. -->
+      <%- include("../partials/form.ejs", { formAction: '/posts/create', formId:
+      'create-form', titleValue: '', messageValue: '', buttonText: 'Submit' })
+      %>
+    </div>
+    <div class="footer"><%- include("../partials/footer.ejs") %></div>
+  </main>
+</html>

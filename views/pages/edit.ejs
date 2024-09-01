@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/header.ejs") %>
+  <main>
+    <h2 class="container">Edit note</h2>
+    <div>
+      <!-- Includes the form.ejs partial with parameters for editing a post. The formAction URL is dynamically set to include the post ID for editing, and initial values for the title and message are provided. -->
+      <%- include("../partials/form.ejs", { formAction:
+      `/posts/edit/${post.id}`, formId: 'edit-form', titleValue: post.title,
+      messageValue: post.message, buttonText: 'Update' }) %>
+    </div>
+    <div class="footer"><%- include("../partials/footer.ejs") %></div>
+
+    <!-- Add jQuery CDN (full version) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Contains jQuery code for handling the form submission. -->
+    <script>
+      $(document).ready(function () {
+        //Attaches a submit event handler to the form with ID edit-form.
+        $("#edit-form").on("submit", function (e) {
+          //Prevents the default form submission.
+          e.preventDefault();
+
+          const postId = "<%= post.id %>"; //Retrieves the post ID from the server-side variable and ensures it's included in the request.
+          const title = $("#title").val(); //Gets the value of the title input field.
+          const message = $("#message").val(); //Gets the value of the message input field.
+
+          //Sends an AJAX request to update the post.
+          $.ajax({
+            url: `/posts/edit/${postId}`, //Specifies the URL for the PUT request.
+            type: "PUT", //Sets the request method to PUT.
+            //Sends the updated title and message as data.
+            data: {
+              title: title,
+              message: message,
+            },
+            //Redirects to the home page upon successful update.
+            success: function () {
+              window.location.href = "/";
+            },
+            //Alerts the user if the update fails.
+            error: function (err) {
+              alert("Failed to update the post");
+            },
+          });
+        });
+      });
+    </script>
+  </main>
+</html>
