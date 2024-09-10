@@ -8,6 +8,7 @@ body {
   min-height: 100vh;
   margin: 0;
   background-color: #1e1e1e;
+  cursor: url("/assets/cursors/cursor.cur"), auto;
 }
 
 h2.container {
@@ -26,4 +27,8 @@ h2.container {
   padding: 20px;
   gap: 20px;
   box-sizing: border-box;
+}
+
+.pointer {
+  cursor: url("/assets/cursors/pointer.cur"), auto;
 }

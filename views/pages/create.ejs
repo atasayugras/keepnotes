@@ -5,6 +5,7 @@
     <h2 class="container">Create new note</h2>
     <div>
       <!-- Includes a form partial with specific parameters for action URL, form ID, and button text. -->
+      <!-- The code below passes dynamic keys with specified values TO form.ejs -->
       <%- include("../partials/form.ejs", { formAction: '/posts/create', formId:
       'create-form', titleValue: '', messageValue: '', buttonText: 'Submit' })
       %>
@@ -12,3 +13,11 @@
     <div class="footer"><%- include("../partials/footer.ejs") %></div>
   </main>
 </html>
+
+<!--
+The form partial is included with dynamic values:
+- formAction specifies the URL where the form will be submitted (/posts/create).
+- formId is a unique identifier for the form, used for styling and scripting.
+- titleValue and messageValue are empty strings, indicating this is for creating a new note with no prefilled data.
+- buttonText is set to 'Submit', indicating the form's purpose is to create a new note.
+-->

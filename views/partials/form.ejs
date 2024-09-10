@@ -1,5 +1,13 @@
+<!-- In this form, we use dynamic values like titleValue to prefill fields for editing scenarios, 
+ ensuring the form displays existing data and adapts to user-specific contexts. -->
+
 <div class="container">
   <form action="<%= formAction %>" method="POST" id="<%= formId %>">
+    <!-- The form's action attribute determines where the form data will be sent when it's submitted. 
+     The formAction syntax is a placeholder for a server-side variable that will be replaced with a URL when the page is rendered. -->
+
+    <!-- The id attribute assigns a unique identifier to the form, allowing for styling or scripting. 
+      The formId syntax will be replaced with the actual form ID. -->
     <div>
       <input
         type="text"
@@ -10,6 +18,7 @@
         value="<%= titleValue %>"
         required
       />
+      <!-- titleValue sets the initial value of the input field, populated by the server-side variable titleValue (used for prefilling in edit scenario) -->
     </div>
     <div>
       <textarea
@@ -22,6 +31,9 @@
 <%= messageValue %></textarea
       >
     </div>
+    <!-- messageValue is the initial content of the textarea, populated by the server-side variable. 
+     Unlike input, the value of a textarea is placed between the opening and closing tags. (used for prefilling in edit scenario) -->
     <button type="submit" class="form-button"><%= buttonText %></button>
   </form>
+  <!-- buttonText will change depending on creation or editing scenario -->
 </div>
