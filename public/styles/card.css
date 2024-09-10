@@ -53,6 +53,7 @@
   cursor: pointer; /* Show pointer cursor on hover */
   background-color: transparent;
   height: 24px;
+  cursor: url("/assets/cursors/pointer.cur"), auto;
 }
 
 .icon-btn:hover {

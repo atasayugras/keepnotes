@@ -17,14 +17,20 @@
             <h3 class="card-title"><%= post.title %></h3>
             <div class="card-btn-container">
               <!-- Edit button with data attribute for the post ID. -->
-              <button class="icon-btn edit-btn" data-id="<%= post.id %>">
-                <svg class="icon pointer">
+              <button
+                class="icon-btn edit-btn pointer"
+                data-id="<%= post.id %>"
+              >
+                <svg class="icon">
                   <use xlink:href="/assets/icons/sprite.svg#icon-edit"></use>
                 </svg>
               </button>
               <!-- Delete button with data attribute for the post ID. -->
-              <button class="icon-btn delete-btn" data-id="<%= post.id %>">
-                <svg class="icon pointer">
+              <button
+                class="icon-btn delete-btn pointer"
+                data-id="<%= post.id %>"
+              >
+                <svg class="icon">
                   <use xlink:href="/assets/icons/sprite.svg#icon-delete"></use>
                 </svg>
               </button>
