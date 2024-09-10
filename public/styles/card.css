@@ -32,6 +32,12 @@
   min-width: 0; /* Prevents the title from pushing the icons out */
 }
 
+.card-btn-container {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
 .card-message {
   font-size: 16px;
   color: #d0d0d0;
@@ -39,10 +45,8 @@
   overflow-wrap: break-word; /* Break long words to prevent overflow */
 }
 
-.card-btn-container {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
+.card:last-child {
+  margin-bottom: 80px; /* Adjust the value as needed */
 }
 
 .icon-btn {
